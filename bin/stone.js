@@ -42,7 +42,7 @@ program
   })
   .on('option:init', function (project) {
     const spinner = ora('download template ...').start();
-    download('stone0117/stone-cli#master', project, function (err) {
+    download('stone0117/stone-template#master', project, function (err) {
       if (err) {return console.log(err);}
       spinner.succeed('succeed');
     });
