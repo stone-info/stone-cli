@@ -2,7 +2,6 @@
 
 const program  = require('commander');
 const download = require('download-git-repo');
-const chalk    = require('chalk');
 const ora      = require('ora');
 const snlog    = require('../lib/sntools/log').snlog;
 var colors     = require('colors/safe');
@@ -31,7 +30,14 @@ program
     if (m.length >= 3) {
       let owner = m[1];
       let name  = m[2];
-      download(`github:${owner}/${name}#master`, name, function (err) {
+
+      name = name.replace('.git', '');
+
+      let repo = `${owner}/${name}#master`;
+
+      console.log(repo);
+
+      download(repo, name, function (err) {
         if (err) {
           // console.log(err);
           spinner.fail(err);
