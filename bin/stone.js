@@ -20,8 +20,9 @@ program
     }
 
     const spinner = ora('downloading ...').start();
-    // https://github.com/stone0117/stone-cli.git
-    // https://github.com/stone0117/stone-cli
+    // https://github.com/stone0117/stone-template.git
+    // https://github.com/stone0117/stone-template
+    // https://github.com/stone0117/stone-template.git
     const regex = /https:\/\/github.com\/(.*)\/(.*)(.git|\/)?/s;
 
     let m = regex.exec(link);
